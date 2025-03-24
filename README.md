@@ -36,7 +36,7 @@ Please note it is only limited to process .csv file formats (common delimited fo
 
 ![image](https://github.com/user-attachments/assets/17a8a130-8000-4e42-a23a-531452770626)
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 ## Code 2: Main Code to generate 2D Damage Plot, 3D Volumetric Front & Back scans and 3D Hybrid Merged Scan:
@@ -95,8 +95,52 @@ Back Scan:
   
   ![image](https://github.com/user-attachments/assets/3c452da1-3cf0-46e7-87c4-da2cc96f574e)
 
-* If 'YES' was selected to  plot for B4. The expected output is:
+* If 'YES' was selected to  plot for B4. The expected output on the command window tab is:
+1. Enter the sample length in mm (Numerical Value Only). In B4 it is 130
+2. Enter the sample length in mm (Numerical Value Only). In B4 it is 130
 
-![image](https://github.com/user-attachments/assets/b2bbf8b0-ddb2-4b65-98ff-27cfbf2a7125)
+The threshold bound range of the plate thickness is the range where the range of the damage area is distinguished from the non-damaged region. In B4, consider the layers between 1.5 and 2.0 would help to differentiate the middle region of damage being captured from the volumetric vertical view of a back scan of B4 as follows: 
 
-  
+![image](https://github.com/user-attachments/assets/95ce51a2-4312-40d6-b000-8496eec039f9)
+
+3. Enter the lower threshold bound of damage region ( Numerical Value within the range of plateThick). In this case, 1.5 was selected.
+4. Enter the upper threshold bound of damage region ( Numerical Value within the range of plateThick). In this case, 2.0 was selected.
+
+![image](https://github.com/user-attachments/assets/c4c12989-de09-4a8d-8244-7617814ce548)
+
+5. It is expected for the user to define and draw the damaged region of interest to determine the damage area in mm^2. A zoom feature is provided at the bottom left corner of the plot as shown the figure below which helps to zoom in and out of the sample of front view and provide a more accurate drawing of the damage region.
+
+![image](https://github.com/user-attachments/assets/6d4f0d6c-6d82-4e0b-99a6-c6149ca2f3c7)
+
+6. Once the drawing on the image above is completed, the MATLAB automatically processes, and the numerical value of the damaged area is represented on the command window as represented below, along with upper and lower threshold bounds used:
+
+![image](https://github.com/user-attachments/assets/9a31b870-f26b-4071-8af1-da6728f1fce5)
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+## Code 3: Code to determine the damage region and area using Alicona Profile-form technique:
+
+IMPORTANT: This MATLAB script is limited to the functionality for image files only. Before the use of this script, it is expected to know the file path and ensure the current working directory is being processed with the script and input image files.
+
+It is expected to have a reference length within the image to be captured for pixel size, and failure to do so may result in inaccuracies/ failure to process the script.
+
+### Steps and Instructions:
+
+#### 1. INPUTS (Before 'Run'):
+
+1. In Line 6: Please enter the filename of the image as follows. In this case, it is 'B4 Alicona.png' as shown below:
+
+![image](https://github.com/user-attachments/assets/9626ba8a-0219-4291-8eb5-f0ce68ad1ea3)
+
+The reference dimension for scale bar represents the length ratio of the image for pixel length and determination of pixel area. This helps to dinstinguish between damaged area and undamaged area pixels for calculation and the function 'binary scale' detects the scale bar with the grey image and converts to the aspect roatio respectively.
+
+2. If the example from Agash's data at University of Bristol is being used, then please update the 'reference_length_mm' and click 'Run'
+   
+ or
+ 
+3. Please update thescale bar detection lines 21 and 24 with 'binary scale' and 'props' based on the reference dimension provided within the image.
+
+#### 2. Click 'Run'
+
+
+
