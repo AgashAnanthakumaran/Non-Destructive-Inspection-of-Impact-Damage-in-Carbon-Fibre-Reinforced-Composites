@@ -108,7 +108,7 @@ The threshold bound range of the plate thickness is the range where the range of
 
 ![image](https://github.com/user-attachments/assets/c4c12989-de09-4a8d-8244-7617814ce548)
 
-5. It is expected for the user to define and draw the damaged region of interest to determine the damage area in mm^2. A zoom feature is provided at the bottom left corner of the plot as shown the figure below which helps to zoom in and out of the sample of front view and provide a more accurate drawing of the damage region.
+5. It is expected for the user to define and draw the damaged region of interest to determine the damage area in (mm²). A zoom feature is provided at the bottom left corner of the plot as shown the figure below which helps to zoom in and out of the sample of front view and provide a more accurate drawing of the damage region.
 
 ![image](https://github.com/user-attachments/assets/6d4f0d6c-6d82-4e0b-99a6-c6149ca2f3c7)
 
@@ -142,5 +142,26 @@ The reference dimension for scale bar represents the length ratio of the image f
 
 #### 2. Click 'Run'
 
+→ Once 'Run' is clicked there will be an image prompt to draw the damage region as follows:
+
+![image](https://github.com/user-attachments/assets/3880ab7c-76f0-49d2-b259-d757128fb012)
+
+→ In this case, the post-processing activity of sample B4 will be processed. The user is expected to draw the boundary like this as shown:
+
+![image](https://github.com/user-attachments/assets/05edf712-ec80-4c6f-b199-df6ff3c3f8fb)
+
+ 
+→ Once the boundary is drawn and provided in, the following step will involve the output the damage boundary chosen as follows:
+
+![image](https://github.com/user-attachments/assets/1c39e779-edc5-449e-bc41-2e881c2e47f4)
+
+Any errors/discrpencies in the images/boundary regions will lead to an error messsage being displayed, and in this case, it is expected to re-run the script automatically and input the filenames of image again.
+
+→ The final stage displays the number of pixels of damage area chosen, the scale factor used and finally the damaged area in (mm²) as shown below as follows:
+
+![image](https://github.com/user-attachments/assets/64cd80b0-eac4-49cd-adb9-0d1f3a588d7b)
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
